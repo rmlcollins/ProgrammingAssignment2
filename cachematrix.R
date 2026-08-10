@@ -50,3 +50,22 @@ cacheSolve <- function(x, ...) {
         # Return the inverse
         inv
 }
+
+
+
+
+# Source your file
+source("cachematrix.R")
+
+# Create a simple invertible matrix
+my_matrix <- makeCacheMatrix(matrix(1:4, 2, 2))
+
+# Get the matrix
+my_matrix$get()
+
+# Calculate the inverse (this should compute it)
+cacheSolve(my_matrix)
+
+# Call it again (this should print "getting cached data" and return the cached inverse)
+cacheSolve(my_matrix)
+
